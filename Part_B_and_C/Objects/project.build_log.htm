@@ -1,0 +1,145 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Vihan Jayaraman, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\vihan\OneDrive\Desktop\UCSB Projects\ECE153B Projects\153B Final Project\Part_B_and_C\project.uvprojx
+Project File Date:  05/31/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+src/UART.c(96): warning: passing 'volatile DMA_Channel_TypeDef *' to parameter of type 'DMA_Channel_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+   96 |         }DMA_Init_UARTx(tx,USARTx);
+      |                         ^~
+src/DMA.h(14): note: passing argument to parameter 'tx' here
+   14 | void DMA_Init_UARTx(DMA_Channel_TypeDef * tx, USART_TypeDef * uart);
+      |                                           ^
+src/UART.c(160): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  160 |                 strcpy(active,data);
+      |                        ^~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+src/UART.c(173): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  173 |                 sprintf(pending+pending_size, data);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+src/UART.c(173): warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+  173 |                 sprintf(pending+pending_size, data);
+      |                                               ^~~~
+src/UART.c(173): note: treat the string as an argument to avoid this
+  173 |                 sprintf(pending+pending_size, data);
+      |                                               ^
+      |                                               "%s", 
+src/UART.c(187): warning: passing 'volatile char[256]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  187 |                 UART_onInput(inputs, input_size);
+      |                              ^~~~~~
+src/UART.h(28): note: passing argument to parameter 'inputs' here
+   28 | void UART_onInput(char* inputs, uint32_t size);
+      |                         ^
+src/UART.c(202): warning: assigning to 'uint8_t *' (aka 'unsigned char *') from 'volatile uint8_t *' (aka 'volatile unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  202 |                 temp = active;
+      |                      ^ ~~~~~~
+src/UART.c(214): warning: no previous extern declaration for non-static variable 'watchUS1IRQ' [-Wmissing-variable-declarations]
+  214 | int watchUS1IRQ = 0;
+      |     ^
+src/UART.c(214): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  214 | int watchUS1IRQ = 0;
+      | ^
+src/UART.c(237): warning: no previous extern declaration for non-static variable 'watchUS2IRQ' [-Wmissing-variable-declarations]
+  237 | int watchUS2IRQ = 0;
+      |     ^
+src/UART.c(237): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  237 | int watchUS2IRQ = 0;
+      | ^
+src/UART.c(255): warning: no previous extern declaration for non-static variable 'watchC4IRQHandling' [-Wmissing-variable-declarations]
+  255 | int watchC4IRQHandling = 0;
+      |     ^
+src/UART.c(255): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  255 | int watchC4IRQHandling = 0;
+      | ^
+src/UART.c(256): warning: no previous extern declaration for non-static variable 'watchC7IRQHandling' [-Wmissing-variable-declarations]
+  256 | int watchC7IRQHandling = 0;
+      |     ^
+src/UART.c(256): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  256 | int watchC7IRQHandling = 0;
+      | ^
+src/UART.c(257): warning: no previous prototype for function 'DMA1_Channel4_IRQHandler' [-Wmissing-prototypes]
+  257 | void DMA1_Channel4_IRQHandler(void){ 
+      |      ^
+src/UART.c(257): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  257 | void DMA1_Channel4_IRQHandler(void){ 
+      | ^
+      | static 
+src/UART.c(271): warning: no previous prototype for function 'DMA1_Channel7_IRQHandler' [-Wmissing-prototypes]
+  271 | void DMA1_Channel7_IRQHandler(void){ 
+      |      ^
+src/UART.c(271): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  271 | void DMA1_Channel7_IRQHandler(void){ 
+      | ^
+      | static 
+src/UART.c(195): warning: no previous extern declaration for non-static variable 'temp' [-Wmissing-variable-declarations]
+  195 | uint8_t * temp;
+      |           ^
+src/UART.c(195): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  195 | uint8_t * temp;
+      | ^
+src/UART.c(173): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  173 |                 sprintf(pending+pending_size, data);
+      |                         ^~~~~~~
+src/UART.c(185): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  185 |         inputs[input_size++]=ch;
+      |         ^~~~~~
+15 warnings generated.
+compiling UART.c...
+linking...
+Program Size: Code=11500 RO-data=1060 RW-data=8 ZI-data=2704  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 15 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.7.0.pack
+                Keil::STM32L4xx_DFP@2.7.0
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/vihan/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/vihan/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
